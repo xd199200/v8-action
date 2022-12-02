@@ -17,7 +17,7 @@ env:
   COMMIT: 0
   DEPOT_UPLOAD: false
   SRC_UPLOAD: true
-  BINARY_UPLOAD: false
+  BINARY_UPLOAD: true
   UPLOAD_RELEASE: true
   UPLOAD_WERANSFER: true
   UPLOAD_COWTRANSFER: true
