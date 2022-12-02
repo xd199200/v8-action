@@ -18,9 +18,6 @@ env:
   DEPOT_UPLOAD: false
   SRC_UPLOAD: true
   BINARY_UPLOAD: true
-  UPLOAD_RELEASE: true
-  UPLOAD_WERANSFER: true
-  UPLOAD_COWTRANSFER: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -87,7 +84,7 @@ jobs:
    
     # upload v8.zip to cowtransfer
     - name: upload v8_src
-      if: env.SRC_UPLOAD == 'true' && !cancelled()
+      if: env.SRC_UPLOAD == true && !cancelled()
       run: |
         curl -fsSL git.io/file-transfer | sh
         ./transfer cow --block 2621440 -s -p 64 --no-progress v8.7z.001 2>&1 | tee cowtransfer.log
